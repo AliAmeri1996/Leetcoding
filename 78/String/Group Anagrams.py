@@ -24,7 +24,8 @@ print(group_anagrams(["act","pots","tops","cat","stop","hat"]))
 #"cat" → "act"
 #"act" → "act"
 #"tac" → "act"
-  
+#O(n · k log k) ,sorted(word), Takes O(k log k)
+
 
 #anagrams[key] = []
 '''this means that in the right side of the hash create an empty list'''

@@ -31,25 +31,6 @@ print(anagram("stone", "note"))  # False
 # space complixity=O(1)
 
 
-def anangram(a,b):
-    if len(a)!=len(b):
-        return False
-    
-    count={}
-
-    for char in a:
-        count[char]=count.get(char,0)+1
-
-    for char in b:
-        if char not in count:
-            return False
-        count[char]-=1
-        if count[char]<0:
-            return False
-        
-    return True
-        
-
     
 
         

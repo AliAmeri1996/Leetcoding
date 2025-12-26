@@ -15,3 +15,39 @@ def max_profit(prices):
 #O(n)
 
 
+def maxProfit(prices):
+    if not prices:
+        return 0
+    
+    min_price = prices[0]# inittiliazing the min price.
+    max_profit = 0
+    
+    for price in prices:
+        min_price = min(min_price, price)      # Track lowest price so far
+        profit = price - min_price              # Profit if selling today
+        max_profit = max(max_profit, profit)    # Track best profit
+    
+    return max_profit
+
+
+
+
+def maxProfit(prices):
+    if not prices:
+        return 0
+    
+    min_price = prices[0]
+    max_profit = 0
+    
+    for price in prices:
+        # Instead of: min_price = min(min_price, price)
+        if price < min_price:
+            min_price = price
+        
+        profit = price - min_price
+        
+        # Instead of: max_profit = max(max_profit, profit)
+        if profit > max_profit:
+            max_profit = profit
+    
+    return max_profit

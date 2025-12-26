@@ -3,19 +3,20 @@
 return the k most frequent elements within the array.
 '''
 
-def top_k(numbers, k):
-    freq = {}
-    for num in numbers:
-        if num not in freq:
-            freq[num] = 0
-        freq[num] += 1 # the product of the code till here {1: 1, 2: 2, 3: 3, 4: 2}
+def frequent(nums, k):
+    if not nums:
+        return []
 
-    result = sorted(freq.items(), key=lambda x: x[1])
-    return [num for num, count in result[-k:]]
+    seen = {}
 
+    # count frequencies
+    for i in nums:
+        seen[i] = seen.get(i, 0) + 1
 
+    # sort keys by frequency (descending)
+    sorted_keys = sorted(seen, key=lambda x: seen[x], reverse=True)
 
-print(top_k([1,2,2,3,3,3,4,4],2))
+    return sorted_keys[:k]
 
 
 
